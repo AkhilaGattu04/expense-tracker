@@ -254,7 +254,6 @@ ExpenseTracker/
 │   │   ├── controller/                  # 🎮 REST Controllers
 │   │   │   ├── ExpenseController.java
 │   │   │   ├── ExpenseCategoryController.java
-│   │   │   ├── TagController.java
 │   │   │   ├── UserController.java
 │   │   │   ├── UserProfileController.java
 │   │   │   └── HealthController.java
@@ -269,7 +268,6 @@ ExpenseTracker/
 │   │   ├── entity/                      # 🗄️ JPA Entities
 │   │   │   ├── Expense.java
 │   │   │   ├── ExpenseCategory.java
-│   │   │   ├── Tag.java
 │   │   │   ├── User.java
 │   │   │   └── UserProfile.java
 │   │   │
@@ -282,7 +280,6 @@ ExpenseTracker/
 │   │   ├── repository/                  # 💾 Data Access Layer
 │   │   │   ├── ExpenseRepository.java
 │   │   │   ├── ExpenseCategoryRepository.java
-│   │   │   ├── TagRepository.java
 │   │   │   ├── UserRepository.java
 │   │   │   └── UserProfileRepository.java
 │   │   │
@@ -290,12 +287,10 @@ ExpenseTracker/
 │   │       ├── impl/                    # Service implementations
 │   │       │   ├── ExpenseServiceImpl.java
 │   │       │   ├── ExpenseCategoryServiceImpl.java
-│   │       │   ├── TagServiceImpl.java
 │   │       │   ├── UserServiceImpl.java
 │   │       │   └── UserProfileServiceImpl.java
 │   │       ├── ExpenseService.java
 │   │       ├── ExpenseCategoryService.java
-│   │       ├── TagService.java
 │   │       ├── UserService.java
 │   │       └── UserProfileService.java
 │   │
@@ -365,16 +360,6 @@ ExpenseTracker/
 | `PUT` | `/api/expense-categories/{id}` | Update category |
 | `DELETE` | `/api/expense-categories/{id}` | Delete category |
 
-### 🏷️ Tags
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/tags` | Create new tag |
-| `GET` | `/api/tags` | Retrieve all tags |
-| `GET` | `/api/tags/{id}` | Retrieve tag by ID |
-| `PUT` | `/api/tags/{id}` | Update tag |
-| `DELETE` | `/api/tags/{id}` | Delete tag |
-
 ### 💳 Expenses
 
 | Method | Endpoint | Description |
@@ -386,8 +371,6 @@ ExpenseTracker/
 | `DELETE` | `/api/expenses/{id}` | Delete expense |
 | `GET` | `/api/expenses/user/{userId}` | Get expenses by user |
 | `GET` | `/api/expenses/category/{categoryId}` | Get expenses by category |
-| `POST` | `/api/expenses/{expenseId}/tags/{tagId}` | Add tag to expense |
-| `DELETE` | `/api/expenses/{expenseId}/tags/{tagId}` | Remove tag from expense |
 
 > 📖 For detailed request/response schemas and examples, visit the [Swagger UI](http://localhost:8080/swagger-ui.html).
 
