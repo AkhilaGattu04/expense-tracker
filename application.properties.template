@@ -1,0 +1,67 @@
+# ==============================================
+# ExpenseTracker Application Configuration
+# ==============================================
+# This configuration uses environment variables from .env file
+# See .env.example for required variables
+
+# ==============================================
+# SERVER CONFIGURATION
+# ==============================================
+server.port=${SERVER_PORT:8080}
+
+# ==============================================
+# DATABASE CONFIGURATION
+# ==============================================
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Connection Pool Configuration
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.connection-timeout=30000
+
+# ==============================================
+# JPA / HIBERNATE CONFIGURATION
+# ==============================================
+spring.jpa.hibernate.ddl-auto=${HIBERNATE_DDL_AUTO:update}
+spring.jpa.show-sql=${SHOW_SQL:true}
+spring.jpa.properties.hibernate.dialect=${HIBERNATE_DIALECT}
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.use_sql_comments=true
+spring.jpa.properties.hibernate.jdbc.batch_size=20
+spring.jpa.properties.hibernate.order_inserts=true
+spring.jpa.properties.hibernate.order_updates=true
+
+# ==============================================
+# LOGGING CONFIGURATION
+# ==============================================
+logging.level.com.ExpenseTracker=${LOG_LEVEL_APP:DEBUG}
+logging.level.org.springframework.web=${LOG_LEVEL_WEB:INFO}
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+
+# ==============================================
+# SPRING BOOT ACTUATOR (Optional - uncomment if needed)
+# ==============================================
+# management.endpoints.web.exposure.include=health,info,metrics
+# management.endpoint.health.show-details=always
+
+# ==============================================
+# API DOCUMENTATION (Swagger/OpenAPI)
+# ==============================================
+springdoc.api-docs.path=/v3/api-docs
+springdoc.swagger-ui.path=/swagger-ui.html
+springdoc.swagger-ui.enabled=true
+springdoc.swagger-ui.operationsSorter=method
+
+# ==============================================
+# ERROR HANDLING
+# ==============================================
+server.error.include-message=always
+server.error.include-binding-errors=always
+server.error.include-stacktrace=on_param
+server.error.include-exception=false
